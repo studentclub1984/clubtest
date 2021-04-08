@@ -3,9 +3,17 @@
 # Add steps that publish symbols, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
 
+variables: 
+- group: AzureResourcesVariableGroup
+
 trigger:
 - none
 
+stages:
+- stage: Build
+  jobs: 
+  - job: Build
+  
 pool:
   vmImage: 'windows-latest'
 
